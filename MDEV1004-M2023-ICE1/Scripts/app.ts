@@ -9,13 +9,13 @@
          Start3();
     }
 /* function type 1 = named functions*/
-function Start1()
+function Start1() : void
 {
  console.log("App Started - type 1");
 }
 
 /* function type 2 = anonymous functions pointed to by avariable or const*/
-let Start2 = function()
+let Start2 = function() : void
 {
     console.log("App Started - type 2");
 }
@@ -26,5 +26,5 @@ let Start3 = ()=>
 {
     console.log("App Started - type 3");
 }
-window.addEventListener("load", StartAll);
+window.addEventListener("load", Start1);
 })();

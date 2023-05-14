@@ -16,6 +16,6 @@
     var Start3 = function () {
         console.log("App Started - type 3");
     };
-    window.addEventListener("load", StartAll);
+    window.addEventListener("load", Start1);
 })();
 //# sourceMappingURL=app.js.map
