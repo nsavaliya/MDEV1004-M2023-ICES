@@ -3,6 +3,12 @@ import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 
+//using for Database Module
+import mongoose  from 'mongoose';
+import db from './db';
+
+mongoose.connect(db.localURI);
+
 import indexRouter from '../Routes/index';
 
 let app = express();
