@@ -9,6 +9,13 @@ import db from './db';
 
 mongoose.connect(db.localURI);
 
+mongoose.connection.on('connected', () =>{
+    console.log(`Connected to MongoDB`);
+});
+
+mongoose.connection.on('dis connected', () =>{
+    console.log('DisconnectedfromMongoDB');
+})
 import indexRouter from '../Routes/index';
 
 let app = express();
