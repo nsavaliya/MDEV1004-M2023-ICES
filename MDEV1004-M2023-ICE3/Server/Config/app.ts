@@ -3,19 +3,21 @@ import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 
-//using for Database Module
-import mongoose  from 'mongoose';
+//database modules
+import mongoose from 'mongoose';
 import db from './db';
 
-mongoose.connect(db.localURIclear);
+mongoose.connect(db.remoteURI);
 
+//DB connection events
 mongoose.connection.on('connected', () =>{
-    console.log(`Connected to MongoDB`);
+    console.log(`connected to MongoDB`);
 });
 
-mongoose.connection.on('dis connected', () =>{
-    console.log('DisconnectedfromMongoDB');
+mongoose.connection.on('disconnected', () =>{
+    console.log(`Disconnected from MongoDB`);
 })
+
 import indexRouter from '../Routes/index';
 
 let app = express();
