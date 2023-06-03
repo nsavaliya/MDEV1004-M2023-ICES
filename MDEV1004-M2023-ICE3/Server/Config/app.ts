@@ -7,7 +7,7 @@ import logger from 'morgan';
 import mongoose  from 'mongoose';
 import db from './db';
 
-mongoose.connect(db.localURI);
+mongoose.connect(db.localURIclear);
 
 mongoose.connection.on('connected', () =>{
     console.log(`Connected to MongoDB`);
