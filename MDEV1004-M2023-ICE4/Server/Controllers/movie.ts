@@ -112,3 +112,22 @@ export function updateMovie(req: Request, res: Response, next: NextFunction): vo
 
    Movie.create()
 }
+
+
+
+export function DeleteMovie(req: Request, res: Response, next: NextFunction): void
+{
+    let id = req.params.id;
+    
+   Movie.deleteOne({_id: id})
+   .then(function()
+   {
+        res.json(id)
+   })
+   .catch(function(err)
+   {
+    console.error(err);
+   });
+
+   Movie.create()
+}
